@@ -24,9 +24,9 @@ def get_params():
 
     # Source data
 
-    params['root'] = '/home/marta/Desktop/GDSApy2/'
+    params['root'] = '\D:\TB2016\'
 
-    params['database'] = 'TerrassaBuildings900'
+    params['database'] = 'TB2016'
 
 
 
