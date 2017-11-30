@@ -9,7 +9,7 @@ def build_database(params):
 
 
 
-    # List images
+    #fa una llista de les imatges
 
     image_names = os.listdir(os.path.join(params['root'],
 
@@ -17,7 +17,7 @@ def build_database(params):
 
 
 
-    # File to be saved
+    # Utilitza el fitxer que sera guardat
 
     file = open(os.path.join(params['root'],params['root_save'],
 
@@ -27,7 +27,7 @@ def build_database(params):
 
 
 
-    # Save image list to disk
+    # guarda les imatges en el fitxer "llista"
 
     for imname in image_names:
 
