@@ -15,7 +15,7 @@ def rank(params):
 
 
 
-    # Load train and validation feature dictionaries
+    # Carga el diccionaris de funcions de validacio
 
     val_features = pickle.load(open(os.path.join(params['root'],params['root_save'],params['feats_dir'],
 
@@ -35,19 +35,19 @@ def rank(params):
 
 
 
-    # For each image id in the validation set
+    # per a cada id d'imatge en el bloc validacio
 
     for val_id in val_features.keys():
 
 
 
-        # Get its feature
+        # agafem les caracteristiques
 
         bow_feats = val_features[val_id]
 
 
 
-        # The ranking is composed with the ids of all training images
+        # el ranking es composa amb els id de les imatges porcesades
 
         ranking = train_features.keys()
 
@@ -57,7 +57,7 @@ def rank(params):
 
 
 
-        # The .squeeze() method reduces the dimensions of an array to the minimum. E.g. if we have a numpy array of shape (400,1,100) it will transform it to (400,100)
+        # el .squeeze() redueix la dimensió de la formacio . Ex: transforma una matriu (400,1,100) a (400,100)
 
         distances = pairwise_distances(bow_feats,X.squeeze())
 
@@ -65,13 +65,13 @@ def rank(params):
 
 
 
-        # Sort the ranking according to the distances. We convert 'ranking' to numpy.array to sort it, and then back to list (although we could leave it as numpy array).
+        # ordena el ranking d'acord amb les distancies. Ho convertim a numpy.array per ordenarlo, finalment ho enviem a la llista 
 
         ranking = list(np.array(ranking)[np.argsort(distances.squeeze())])
 
 
 
-        # Save to text file
+        # guardem el fitxer de text
 
         outfile = open(os.path.join(params['root'],params['root_save'],params['rankings_dir'],params['descriptor_type'],params['split'],val_id.split('.')[0] + '.txt'),'w')
 
