@@ -14,8 +14,8 @@ def get_params():
 
 
 
-    Define dictionary with parameters
-
+    
+    definim el diccionari amb el parametres
 
 
     '''
@@ -28,7 +28,7 @@ def get_params():
 
 
 
-    # Source data
+    # directori
 
     params['root'] = '\Users\Victor Pacheco Garci\Desktop\PicZam'
 
@@ -36,15 +36,15 @@ def get_params():
 
 
 
-    # To generate
+    # per generar
 
-    # 'root_save' directory goes under 'root':
+    # diccionari 'root_save'  va sota el 'root':
 
     params['root_save'] = 'save'
 
 
 
-    # All the following go under 'root_save':
+    # tot els següents parametres van sota 'root_save':
 
     params['image_lists'] = 'image_lists'
 
@@ -64,7 +64,7 @@ def get_params():
 
 
 
-    # Parameters
+    # parametres
 
     params['split'] = 'val'
 
@@ -80,7 +80,7 @@ def get_params():
 
 
 
-    # Classification
+    # Clasificacio
 
     params['classifier'] = 'SVM'
 
@@ -100,7 +100,7 @@ def get_params():
 
 
 
-    # Normalization of local descriptors
+    # normalitzacio dels descriptors locals
 
     params['whiten'] = False
 
@@ -112,7 +112,7 @@ def get_params():
 
 
 
-    # We read the training annotations to know the set of possible labels
+    # llegim les anotacions per saber els possibles etiquetes
 
     data = pd.read_csv(os.path.join(params['root'],
 
@@ -122,7 +122,7 @@ def get_params():
 
 
 
-    # Store them in the parameters dictionary for later use
+    # les guardem en diccionari de parametres per utilitzarles mes tardS
 
     params['possible_labels'] = np.unique(data['ClassID'])
 
@@ -142,9 +142,9 @@ def make_dir(dir):
 
     '''
 
-    Creates a directory if it does not exist
+    crea un directori per si no existeix
 
-    dir: absolute path to directory to create
+   
 
     '''
 
@@ -160,7 +160,7 @@ def create_dirs(params):
 
     '''
 
-    Create directories specified in params
+    crea un directori amb el paramnetres especificats
 
     '''
 
